@@ -5,9 +5,43 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head></h:head> 
-<body> 
+<h:body> 
 
+<ui:composition template="./template.xhtml">
+    <ui:define name="top">
+        <h1>RETURN TO GNOME CAVE</h1>
+    </ui:define>
 
+    <ui:define name="content">
+        
+        <h:outputText value="The Party"/>
+        safsdfsadfasfdsf
+        <!-- table of player characters -->
+        <h:dataTable>
+        
+        
+        
+        </h:dataTable>
+        
+        <p>
+        
+	        <!-- create new character button -->
+	        <h:commandButton 
+	            action="#{creater.rollStats()}"
+	            value="Create Player Character"/>
+        
+                
+            <!--  cast FIREBALL to deal damage to all PCs -->
+            <h:commandButton 
+                action="#{event.fireball()}" 
+                value="FIREBALL!"/>
+        
+        </p>
+        
+        
+        
+    </ui:define>
+</ui:composition>
 
-</body> 
+</h:body> 
 </html>

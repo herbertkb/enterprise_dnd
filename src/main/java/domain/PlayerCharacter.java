@@ -1,4 +1,4 @@
-package net.herbertkb.charsheet.domain;
+package domain;
 
 import java.io.Serializable;
 import java.lang.String;
@@ -23,14 +23,8 @@ public class PlayerCharacter implements Serializable {
 	@Column private String cclass;		//TODO: replace with an enum
 	@Column private int level;
 	
-	@Column @Min(0) private int str;
-	@Column @Min(0) private int dex;
-	@Column @Min(0) private int con;
-	@Column @Min(0) private int wis;
-	@Column @Min(0) private int intel;
-	@Column @Min(0) private int cha;
+	private BaseStats basestats;
 
-	
 	private static final long serialVersionUID = 1L;
 
 	public PlayerCharacter() {
@@ -64,42 +58,20 @@ public class PlayerCharacter implements Serializable {
 	public void setCclass(String cclass) {
 		this.cclass = cclass;
 	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	public BaseStats getBasestats() {
+		return basestats;
+	}
+	public void setBasestats(BaseStats basestats) {
+		this.basestats = basestats;
+	}
 	
-	public int getStr() {
-		return str;
-	}
-	public void setStr(int str) {
-		this.str = str;
-	}
-	public int getDex() {
-		return dex;
-	}
-	public void setDex(int dex) {
-		this.dex = dex;
-	}
-	public int getCon() {
-		return con;
-	}
-	public void setCon(int con) {
-		this.con = con;
-	}
-	public int getWis() {
-		return wis;
-	}
-	public void setWis(int wis) {
-		this.wis = wis;
-	}
-	public int getIntel() {
-		return intel;
-	}
-	public void setIntel(int intel) {
-		this.intel = intel;
-	}
-	public int getCha() {
-		return cha;
-	}
-	public void setCha(int cha) {
-		this.cha = cha;
-	}
+	
+	
    
 }
