@@ -11,21 +11,16 @@ import javax.ws.rs.Produces;
 public class Dice {
 	
 	@GET
-	@Path("/{dice:[0-9]+}d{sides:[0-9]+}{sign: [\\+-]?}{modifier:[0-9]*}")
+	@Path("/{dice:[0-9]+}d{sides:[0-9]+}")
 	@Produces("text/plain")
 	public String rollDice(
 			@PathParam("dice") int dice,
-			@PathParam("sides") int sides,
-			@PathParam("sign") char sign,
-			@PathParam("modifier") int modifier) {
+			@PathParam("sides") int sides) {
 				
 		int score = 0;
 		for(int i = 0; i < dice; i++ ) {
 			score += ThreadLocalRandom.current().nextInt(1, sides + 1);
 		}
-		
-		modifier *= (sign == '+') ? 1 : -1;
-		score += modifier;
 		
 		return new Integer(score).toString();
 	}
