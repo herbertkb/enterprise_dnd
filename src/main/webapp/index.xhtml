@@ -10,13 +10,9 @@
 <ui:composition>
                
         <h1>RETURN TO GNOME CAVE</h1>
-    
-
         
         <h:outputText value="The Party"/>
-        
-        some raw non-jsf text
-        
+                
         <!-- table of player characters -->
         <p>
         <h:dataTable>
@@ -28,10 +24,10 @@
         
         <!--  buttons -->
         <p>
-        
+            <h:form>
 	        <!-- create new character  -->
 	        <h:commandButton 
-	            action="#{creater.rollStats()}"
+	            action="#{creater.rollStats}"
 	            value="Create Player Character"/>
         
                 
@@ -39,7 +35,7 @@
             <h:commandButton 
                 action="#{event.fireball()}" 
                 value="FIREBALL!"/>
-        
+            </h:form>
         </p>
         
         

@@ -1,6 +1,7 @@
 package view;
 
 
+import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -24,6 +25,20 @@ public class NewPlayerCharacter implements Serializable {
 	@Produces
 	private BaseStats stats = new BaseStats();
 	
+	@Inject
+	private Conversation conversation;
+	
+	public String rollStats() {
+		stats = new BaseStats();
+		
+		if(conversation.isTransient()){
+			conversation.begin();
+		}
+		
+		return "choose_stats";
+	}	
+	
+	
 	public String keepStats() {
 		
 		pc.setBasestats(stats);
@@ -31,11 +46,7 @@ public class NewPlayerCharacter implements Serializable {
 		return "choose_race";
 	}
 	
-	public String rollStats() {
-		stats = new BaseStats();
-		
-		return "choose_stats";
-	}
+
 	
 	public String keepRace() {
 		return "choose_class";
@@ -46,6 +57,9 @@ public class NewPlayerCharacter implements Serializable {
 	}
 	
 	public String keepName() {
+		
+		conversation.end();
+		
 		return "index";
 	}
 	
