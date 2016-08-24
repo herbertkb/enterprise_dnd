@@ -4,11 +4,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
 
-<ui:composition template="/default_layout.xhtml">
-<ui:define name="pageTitle">Choose Race</ui:define>
-<ui:define name="pageHeader">Choose Your Race</ui:define>
-<ui:define name="body">
-	
+<ui:composition>
 	
 <!-- 
 ToDo: replace race & class strings with enums:
@@ -37,6 +33,6 @@ ToDo: display and redraw base stats based on selection
 	   <h:commandButton action="#{creater.keepRace()}" value="OK" />
 	</p>
 	
-</ui:define>
+
 </ui:composition>
 </html>

@@ -4,11 +4,8 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
 
-<ui:composition template="/default_layout.xhtml">
-<ui:define name="pageTitle">Choose Class</ui:define>
-<ui:define name="pageHeader">Choose Your Class</ui:define>
-<ui:define name="body">
-    
+<ui:composition>
+
     
 <!-- 
 ToDo: replace race & class strings with enums:
@@ -37,6 +34,6 @@ ToDo: display and redraw bonuses and special abilities based on selection
        <h:commandButton action="#{creater.keepClass()}" value="OK" />
     </p>
     
-</ui:define>
+
 </ui:composition>
 </html>

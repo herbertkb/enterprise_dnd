@@ -5,11 +5,7 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head></h:head> 
-<ui:composition template="/default_layout.xhtml">
-
-    <ui:define name="title">Roll for Stats!</ui:define>
-    <ui:define name="head">Roll for Stats!</ui:define>
-    <ui:define name="content">
+<ui:composition>
     
     <!-- Display the rolls -->
     <p>
@@ -48,7 +44,6 @@
     <h:commandButton action="#{creater.keepStats()}" value="Keep Stats" />
     </p>
     
-    </ui:define>
 
 
 </ui:composition>
