@@ -35,13 +35,15 @@
 
 
     <p>
+    <h:form>
     <!-- Reroll to reload the page with new stats -->
     <h:commandButton 
-        action="#{creater.rollStats()}" 
+        action="#{creater.rollStats}" 
         value="Re-Roll Stats" />
     
     <!--  Keep stats and move to choosing race -->
-    <h:commandButton action="#{creater.keepStats()}" value="Keep Stats" />
+    <h:commandButton action="#{creater.keepStats}" value="Keep Stats" />
+    </h:form>
     </p>
     
 

@@ -15,9 +15,28 @@
                 
         <!-- table of player characters -->
         <p>
-        <h:dataTable>
-        
-        
+        <h:dataTable value="characterSheets.playerSheets" var="pc">
+            
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{pc.name}
+            </h:column>
+             <h:column>
+                <f:facet name="header">Level</f:facet>
+                #{pc.level}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Race</f:facet>
+                #{pc.race}
+            </h:column>
+             <h:column>
+                <f:facet name="header">Class</f:facet>
+                #{pc.race}
+            </h:column>
+             <h:column>
+                <f:facet name="header">HP</f:facet>
+                #{pc.hp}
+            </h:column>
         
         </h:dataTable>
         </p>

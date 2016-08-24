@@ -2,7 +2,6 @@ package domain;
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.persistence.*;
@@ -49,37 +48,59 @@ public class BaseStats implements Serializable {
 	@Max(30)
 	@Column
 	private int CHA;
-
+	
 	/*
 	 * Roll 4 six-sided dice and return the sum of the three highest.
 	 */
 	private int rollStat(){
 		
-		int[] dice = new int[3];
+		//int[] dice = new int[4];
 		
-		for(int d : dice) {
+		Integer[] dice = new Integer[4];
+				
+		System.out.println("Initial: " + Arrays.toString(dice));
+
+		for(int i = 0; i < dice.length; i++) {
+			dice[i] = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+			System.out.println(dice[i]);
+		}
+
+		for(Integer d : dice){
 			d = ThreadLocalRandom.current().nextInt(1, 6 + 1);
 		}
 		
+		System.out.println("Rolled: " + Arrays.toString(dice));
+		
 		Arrays.sort(dice);
-		int[] best = Arrays.copyOfRange(dice, 1, 3);
+		
+		System.out.println("Sorted: " + Arrays.toString(dice));
+
+		
+		Integer[] best = Arrays.copyOfRange(dice, 1, 4);
+		
+		System.out.println("Sliced: " + Arrays.toString(best));
+
 		
 		int stat = 0;
-		for(int roll : best){
+		for(int roll : best){			
 			stat += roll;
 		}
+		
+		System.out.println("Sum:" + stat);
 		
 		return stat;
 	}
 	
 	public BaseStats() {
 				
-		STR = rollStat();
-		DEX = rollStat();
-		CON = rollStat();
-		WIS = rollStat();
-		INT = rollStat();
-		CHA = rollStat();
+		this.STR = rollStat();
+		this.DEX = rollStat();
+		this.CON = rollStat();
+		this.WIS = rollStat();
+		this.INT = rollStat();
+		this.CHA = rollStat();
+		
+		System.out.println( STR + " " + DEX + " " + CON);
 		
 	}
 	
