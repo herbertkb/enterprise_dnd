@@ -38,7 +38,7 @@ public class NewPlayerCharacter implements Serializable {
 	@PlayerCharacters
 	private CharacterStorage players;
 	
-	@EJB
+	@Inject
 	private HpChanger hpInitializer;
 	
 	@EJB
@@ -70,6 +70,8 @@ public class NewPlayerCharacter implements Serializable {
 	}
 	
 	public String keepClass() {
+		
+		System.out.println( pc.getCclass() );
 
 		return "choose_name";
 	}
@@ -78,7 +80,7 @@ public class NewPlayerCharacter implements Serializable {
 		
 		// Set player to random level
 		pc.setLevel( Integer.parseInt( dice.rollDice(1, 10)) );
-		
+				
 		// Add to data store and initialize HP
 		players.addCharacter(pc);
 		hpInitializer.changeHP(pc, 0);

@@ -1,5 +1,7 @@
 package domain;
 
+import java.io.Serializable;
+
 import javax.decorator.Decorator;
 import javax.decorator.Delegate;
 import javax.ejb.EJB;
@@ -9,7 +11,9 @@ import javax.inject.Inject;
 import beans.Dice;
 
 @Decorator
-public class HPInitializer implements HpChanger {
+public class HPInitializer implements HpChanger, Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	@Delegate

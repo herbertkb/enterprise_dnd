@@ -1,10 +1,12 @@
 package domain;
 
-import javax.ejb.Stateless;
+import java.io.Serializable;
+
 import javax.inject.Inject;
 
-@Stateless
-public class HpChangerImpl implements HpChanger {
+public class HpChangerImpl implements HpChanger, Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	@PlayerCharacters
