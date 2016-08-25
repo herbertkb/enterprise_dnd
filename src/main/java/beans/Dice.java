@@ -1,4 +1,4 @@
-package rest;
+package beans;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -23,5 +23,5 @@ public class Dice {
 		}
 		
 		return new Integer(score).toString();
-	}
+	}	
 }

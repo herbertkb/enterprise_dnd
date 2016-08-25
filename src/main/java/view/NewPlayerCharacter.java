@@ -8,7 +8,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import domain.BaseStats;
+import domain.CharacterStorage;
 import domain.PlayerCharacter;
+import domain.PlayerCharacters;
+
 import java.io.Serializable;
 
 @ConversationScoped
@@ -27,6 +30,10 @@ public class NewPlayerCharacter implements Serializable {
 	
 	@Inject
 	private Conversation conversation;
+	
+	@Inject
+	@PlayerCharacters
+	private CharacterStorage players;	
 	
 	public String rollStats() {
 		stats = new BaseStats();
@@ -49,14 +56,18 @@ public class NewPlayerCharacter implements Serializable {
 
 	
 	public String keepRace() {
+		
 		return "choose_class";
 	}
 	
 	public String keepClass() {
+
 		return "choose_name";
 	}
 	
 	public String keepName() {
+		
+		players.addCharacter(pc);
 		
 		conversation.end();
 		

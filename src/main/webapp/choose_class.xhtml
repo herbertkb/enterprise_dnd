@@ -15,6 +15,7 @@ http://stackoverflow.com/questions/8229638/how-to-use-enum-values-in-fselectitem
 <!-- 
 ToDo: display and redraw bonuses and special abilities based on selection
 -->
+    <h:form>
     <h:selectOneRadio value="#{sheet.cclass}">
        <f:selectItem 
            itemValue="fighter"
@@ -28,11 +29,9 @@ ToDo: display and redraw bonuses and special abilities based on selection
     </h:selectOneRadio>
     
     <p>
-        <h:form>
        <h:commandButton action="#{creater.keepClass()}" value="OK" />
-       </h:form>
     </p>
-    
+    </h:form>
 
 </ui:composition>
 </html>

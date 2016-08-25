@@ -51,11 +51,11 @@ public class BaseStats implements Serializable {
 	
 	/*
 	 * Roll 4 six-sided dice and return the sum of the three highest.
+	 * 
+	 * This should be moved into an EJB or Utility class.
 	 */
 	private int rollStat(){
-		
-		//int[] dice = new int[4];
-		
+				
 		Integer[] dice = new Integer[4];
 				
 		System.out.println("Initial: " + Arrays.toString(dice));
@@ -64,10 +64,6 @@ public class BaseStats implements Serializable {
 			dice[i] = ThreadLocalRandom.current().nextInt(1, 6 + 1);
 			System.out.println(dice[i]);
 		}
-
-//		for(Integer d : dice){
-//			d = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-//		}
 		
 		System.out.println("Rolled: " + Arrays.toString(dice));
 		

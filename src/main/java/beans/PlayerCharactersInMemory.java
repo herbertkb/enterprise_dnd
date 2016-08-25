@@ -29,10 +29,6 @@ public class PlayerCharactersInMemory implements CharacterStorage {
 		
 		playerCharacters = new HashMap<String, PlayerCharacter>();
 		
-		PlayerCharacter notEmpty = new PlayerCharacter();
-		notEmpty.setName("Not Empty");
-		
-		addCharacter(notEmpty);
 	}
 
 	@Override

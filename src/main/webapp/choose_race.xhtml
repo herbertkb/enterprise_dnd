@@ -14,24 +14,29 @@ http://stackoverflow.com/questions/8229638/how-to-use-enum-values-in-fselectitem
 <!-- 
 ToDo: display and redraw base stats based on selection
 -->
-	<h:selectOneRadio value="#{sheet.race}">
-	   <f:selectItem 
+    <h:form>
+	<h:selectOneRadio id="race" value="#{sheet.race}">
+	   <p>
+	   <f:selectItem
 	       itemValue="human"
 	       itemLabel="Human"/>
-       <f:selectItem 
+       </p>       
+       <p>
+       <f:selectItem
            itemValue="dwarf"
-           itemLabel="Dwarf (+2 Con, -2 Dex)"/>
-       <f:selectItem 
+           itemLabel="Dwarf (+2 Con, -2 Dex)" />
+       </p>
+       <p>
+       <f:selectItem
            itemValue="elf"
            itemLabel="Elf (+2 Dex, -2 Con)"/>
+       </p>
 	</h:selectOneRadio>
 	
-	<p>
-	   <h:form>
+	<p>  
 	   <h:commandButton action="#{creater.keepRace()}" value="OK" />
-	   </h:form>
 	</p>
 	
-
+	</h:form>
 </ui:composition>
 </html>
