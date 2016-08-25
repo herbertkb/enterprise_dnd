@@ -15,12 +15,13 @@
                 
         <!-- table of player characters -->
         <p>
-        <h:dataTable value="characterSheets.playerSheets" var="pc">
+        <h:dataTable value="#{characterSheets.playerSheets}" var="pc">
             
             <h:column>
                 <f:facet name="header">Name</f:facet>
-                #{pc.name}
+                name
             </h:column>
+            <!--  
              <h:column>
                 <f:facet name="header">Level</f:facet>
                 #{pc.level}
@@ -37,7 +38,7 @@
                 <f:facet name="header">HP</f:facet>
                 #{pc.hp}
             </h:column>
-        
+        -->
         </h:dataTable>
         </p>
         

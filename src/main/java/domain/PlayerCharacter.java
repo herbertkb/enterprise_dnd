@@ -3,7 +3,6 @@ package domain;
 import java.io.Serializable;
 import java.lang.String;
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
