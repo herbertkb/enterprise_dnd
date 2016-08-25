@@ -13,6 +13,7 @@ import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
 
 import domain.CharacterStorage;
+import domain.LogCharacterChange;
 import domain.PlayerCharacter;
 import domain.PlayerCharacters;;
 
@@ -32,11 +33,13 @@ public class PlayerCharactersInMemory implements CharacterStorage {
 	}
 
 	@Override
+	@LogCharacterChange
 	public void addCharacter(PlayerCharacter pc) {
 		playerCharacters.put(pc.getName(), pc);
 	}
 
 	@Override
+	@LogCharacterChange
 	public void modifyCharacter(PlayerCharacter pc) {
 		playerCharacters.put(pc.getName(), pc);		
 	}

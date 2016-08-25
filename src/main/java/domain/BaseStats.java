@@ -62,7 +62,6 @@ public class BaseStats implements Serializable {
 		Integer[] dice = new Integer[4];
 		for(int i = 0; i < dice.length; i++) {
 			dice[i] = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-			System.out.println(dice[i]);
 		}
 		
 		// Pick the best 3
@@ -86,9 +85,7 @@ public class BaseStats implements Serializable {
 		this.WIS = rollStat();
 		this.INT = rollStat();
 		this.CHA = rollStat();
-		
-		System.out.println( STR + " " + DEX + " " + CON);
-		
+				
 	}
 	
 	public String getCharacterId() {
@@ -145,4 +142,12 @@ public class BaseStats implements Serializable {
 	public void setCHA(int cHA) {
 		CHA = cHA;
 	}
+
+	@Override
+	public String toString() {
+		return "BaseStats [characterId=" + characterId + ", STR=" + STR + ", DEX=" + DEX + ", CON=" + CON + ", WIS="
+				+ WIS + ", INT=" + INT + ", CHA=" + CHA + "]";
+	}
+	
+	
 }

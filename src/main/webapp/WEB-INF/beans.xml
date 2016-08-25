@@ -27,4 +27,7 @@
  <decorators>
   <class>domain.HPInitializer</class>
  </decorators>
+ <interceptors>
+  <class>domain.CharacterChangeLogger</class>
+ </interceptors>
 </beans>

@@ -58,6 +58,7 @@ public class NewPlayerCharacter implements Serializable {
 	public String keepStats() {
 		
 		pc.setBasestats(stats);
+		stats.setCharacterId(pc.getName());
 		
 		return "choose_race";
 	}

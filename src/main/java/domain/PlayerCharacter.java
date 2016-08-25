@@ -69,6 +69,11 @@ public class PlayerCharacter implements Serializable {
 	public void setBasestats(BaseStats basestats) {
 		this.basestats = basestats;
 	}
+	@Override
+	public String toString() {
+		return "PlayerCharacter [name=" + name + ", hp=" + hp + ", race=" + race + ", cclass=" + cclass + ", level="
+				+ level + ", basestats=" + basestats + "]";
+	}
 	
 	
 	
