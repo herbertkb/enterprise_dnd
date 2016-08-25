@@ -16,7 +16,7 @@ import domain.PlayerCharacters;
 public class Characters {
 	
 	@Inject
-	@EJB
+	//@EJB
 	@PlayerCharacters
 	CharacterStorage characters;
 	

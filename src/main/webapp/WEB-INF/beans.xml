@@ -23,7 +23,9 @@
  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee          http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
  <alternatives>
  
-  <class>beans.PlayerCharactersPersistent</class>
+   <class>beans.PlayerCharactersInMemory</class>
+   <!--  <class>beans.PlayerCharactersPersistent</class>  -->
+  
  
  </alternatives>
 </beans>

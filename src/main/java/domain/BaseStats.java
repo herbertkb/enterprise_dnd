@@ -60,14 +60,14 @@ public class BaseStats implements Serializable {
 				
 		System.out.println("Initial: " + Arrays.toString(dice));
 
-//		for(int i = 0; i < dice.length; i++) {
-//			dice[i] = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-//			System.out.println(dice[i]);
-//		}
-
-		for(Integer d : dice){
-			d = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+		for(int i = 0; i < dice.length; i++) {
+			dice[i] = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+			System.out.println(dice[i]);
 		}
+
+//		for(Integer d : dice){
+//			d = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+//		}
 		
 		System.out.println("Rolled: " + Arrays.toString(dice));
 		
