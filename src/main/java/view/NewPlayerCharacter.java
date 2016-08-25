@@ -71,8 +71,6 @@ public class NewPlayerCharacter implements Serializable {
 	
 	public String keepClass() {
 		
-		System.out.println( pc.getCclass() );
-
 		return "choose_name";
 	}
 	

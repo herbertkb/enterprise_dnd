@@ -15,6 +15,8 @@ import javax.validation.constraints.Min;
 @Entity
 public class BaseStats implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column
 	private String characterId;
@@ -56,34 +58,23 @@ public class BaseStats implements Serializable {
 	 */
 	private int rollStat(){
 				
+		// Roll 4 dice
 		Integer[] dice = new Integer[4];
-				
-		System.out.println("Initial: " + Arrays.toString(dice));
-
 		for(int i = 0; i < dice.length; i++) {
 			dice[i] = ThreadLocalRandom.current().nextInt(1, 6 + 1);
 			System.out.println(dice[i]);
 		}
 		
-		System.out.println("Rolled: " + Arrays.toString(dice));
-		
+		// Pick the best 3
 		Arrays.sort(dice);
-		
-		System.out.println("Sorted: " + Arrays.toString(dice));
-
-		
 		Integer[] best = Arrays.copyOfRange(dice, 1, 4);
-		
-		System.out.println("Sliced: " + Arrays.toString(best));
-
-		
+	
+		// Get the sum
 		int stat = 0;
 		for(int roll : best){			
 			stat += roll;
 		}
-		
-		System.out.println("Sum:" + stat);
-		
+				
 		return stat;
 	}
 	
