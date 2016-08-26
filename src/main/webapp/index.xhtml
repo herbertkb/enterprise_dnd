@@ -53,10 +53,19 @@
                 
             <!--  cast FIREBALL to deal damage to all PCs -->
             <h:outputLabel value="Caster Level" for="fireball" />
-            <h:inputText id="fireball" value="#{casterLevel}" />
+            <h:inputText 
+                id="fireball" 
+                value="#{casterLevel}" >
+                <f:converter converterId="javax.faces.Integer"/>
+                <f:validateLongRange minimum="0" maximum="20"/>
+             </h:inputText>
+                
             <h:commandButton 
                 action="#{spellCaster.fireball()}" 
                 value="FIREBALL!"/>
+            <h:message for="fireball" errorStyle="color:red; display:block" />
+                
+                
             </h:form>
         </p>
         

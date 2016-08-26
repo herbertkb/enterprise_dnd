@@ -17,11 +17,11 @@ public class EffectThrower {
 		
 		if (casterLevel > 10) casterLevel = 10;
 		
-		int damage = (-1) * Integer.parseInt(dice.rollDice(casterLevel, 6));
+		int damage = Integer.parseInt(dice.rollDice(casterLevel, 6));
 		
 		System.out.println("CL: " + casterLevel + " DMG: " + damage);
 		
-		hpChange.fire( damage );
+		hpChange.fire( damage * (-1) );
 		
 	}
 	

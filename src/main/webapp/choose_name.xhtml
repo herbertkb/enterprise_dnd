@@ -8,8 +8,12 @@
 
     <h:form>
     <p>
-        <h:outputLabel value="What is your name?" />
-        <h:inputText value="#{sheet.name}" />
+        <h:outputLabel value="What is your name?" for="name"/>
+        <h:inputText id="name" value="#{sheet.name}" required="true">
+            <f:validateLength minimum="1" maximum="32" for="name"/>
+        </h:inputText>
+        <h:message for="name" errorStyle="color:red" />
+        
     </p>
     
     <p>
