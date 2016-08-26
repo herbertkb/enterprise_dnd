@@ -49,15 +49,13 @@
 	        <h:commandButton 
 	            action="#{creater.rollStats}"
 	            value="Create Player Character"/>
-	            
-	        <h:commandButton
-	           action="#{creater.generate}"
-	           value="Generate PC" />
-        
+	        
                 
             <!--  cast FIREBALL to deal damage to all PCs -->
+            <h:outputLabel value="Caster Level" for="fireball" />
+            <h:inputText id="fireball" value="#{casterLevel}" />
             <h:commandButton 
-                action="#{event.fireball()}" 
+                action="#{spellCaster.fireball()}" 
                 value="FIREBALL!"/>
             </h:form>
         </p>

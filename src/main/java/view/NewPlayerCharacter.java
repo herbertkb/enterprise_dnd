@@ -11,6 +11,7 @@ import javax.inject.Named;
 import beans.Dice;
 import domain.BaseStats;
 import domain.CharacterStorage;
+import domain.EffectThrower;
 import domain.HpChanger;
 import domain.PlayerCharacter;
 import domain.PlayerCharacters;
