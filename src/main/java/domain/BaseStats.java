@@ -84,13 +84,6 @@ public class BaseStats implements Serializable {
 				
 	}
 	
-	public String getCharacterId() {
-		return characterId;
-	}
-
-	public void setCharacterId(String characterId) {
-		this.characterId = characterId;
-	}
 	public int getSTR() {
 		return this.STR;
 	}
@@ -141,7 +134,7 @@ public class BaseStats implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BaseStats [characterId=" + characterId + ", STR=" + STR + ", DEX=" + DEX + ", CON=" + CON + ", WIS="
+		return "BaseStats [STR=" + STR + ", DEX=" + DEX + ", CON=" + CON + ", WIS="
 				+ WIS + ", INT=" + INT + ", CHA=" + CHA + "]";
 	}
 	
