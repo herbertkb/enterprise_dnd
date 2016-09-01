@@ -12,14 +12,10 @@ import javax.validation.constraints.Min;
  * Entity implementation class for Entity: BaseStats
  *
  */
-@Entity
+@Embeddable
 public class BaseStats implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@Column
-	private String characterId;
 
 	@Min(0)
 	@Max(30)
