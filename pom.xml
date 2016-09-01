@@ -23,7 +23,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>charsheet</name>
-    <description>A starter Java EE 6 webapp project for use on JBoss EAP 6, generated from the jboss-javaee6-webapp archetype</description>
+    <description>Make character sheets, deal them damage</description>
 
     <url>http://jboss.org/jbossas</url>
     <licenses>
@@ -53,8 +53,8 @@
         <version.war.plugin>2.1.1</version.war.plugin>
 
         <!-- maven-compiler-plugin -->
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
 
@@ -214,6 +214,14 @@
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
                 <version>${version.jboss.maven.plugin}</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
