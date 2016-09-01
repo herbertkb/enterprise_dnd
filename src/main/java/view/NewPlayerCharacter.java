@@ -81,9 +81,10 @@ public class NewPlayerCharacter implements Serializable {
 		// Set player to random level
 		pc.setLevel( Integer.parseInt( dice.rollDice(1, 10)) );
 				
-		// Add to data store and initialize HP
-		players.addCharacter(pc);
+		// initialize HP and add to player storage
 		hpInitializer.changeHP(pc, 0);
+		players.addCharacter(pc);
+
 		
 		// Done!
 		conversation.end();

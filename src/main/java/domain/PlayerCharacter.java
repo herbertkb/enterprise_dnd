@@ -22,6 +22,7 @@ public class PlayerCharacter implements Serializable {
 	@Column private String cclass;		//TODO: replace with an enum
 	@Column private int level;
 	
+	@OneToOne(cascade=CascadeType.ALL)
 	private BaseStats basestats;
 
 	private static final long serialVersionUID = 1L;

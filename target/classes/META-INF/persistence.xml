@@ -22,10 +22,15 @@
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
    <persistence-unit name="primary">
       <jta-data-source>java:jboss/datasources/charsheetDS</jta-data-source>
+      <class>domain.PlayerCharacter</class>
+      <class>domain.BaseStats</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
          <property name="hibernate.show_sql" value="false" />
       </properties>
+      
+      
+      
    </persistence-unit>
 </persistence>
