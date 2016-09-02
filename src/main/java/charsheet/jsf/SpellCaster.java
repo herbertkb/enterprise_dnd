@@ -1,11 +1,11 @@
-package view;
+package charsheet.jsf;
 
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import domain.EffectThrower;
+import charsheet.services.events.EffectThrower;
 
 @Model
 public class SpellCaster {

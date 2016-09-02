@@ -1,37 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition>
 
-    
-<!-- 
+
+	<!-- 
 ToDo: replace race & class strings with enums:
 http://stackoverflow.com/questions/8229638/how-to-use-enum-values-in-fselectitems
 -->
 
-<!-- 
+	<!-- 
 ToDo: display and redraw bonuses and special abilities based on selection
 -->
-    <h:form>
-    <h:selectOneRadio value="#{sheet.cclass}" required="true">
-       <f:selectItem 
-           itemValue="fighter"
-           itemLabel="Fighter"/>
-       <f:selectItem 
-           itemValue="cleric"
-           itemLabel="Cleric"/>
-       <f:selectItem 
-           itemValue="rogue"
-           itemLabel="Rogue"/>
-    </h:selectOneRadio>
-    
-    <p>
-       <h:commandButton action="#{creater.keepClass()}" value="OK" />
-    </p>
-    </h:form>
+	<h:form>
+		<h:selectOneRadio value="#{sheet.cclass}" required="true">
+			<f:selectItem itemValue="fighter" itemLabel="Fighter" />
+			<f:selectItem itemValue="cleric" itemLabel="Cleric" />
+			<f:selectItem itemValue="rogue" itemLabel="Rogue" />
+		</h:selectOneRadio>
+
+		<p>
+			<h:commandButton action="#{creater.keepClass()}" value="OK" />
+		</p>
+	</h:form>
 
 </ui:composition>
 </html>

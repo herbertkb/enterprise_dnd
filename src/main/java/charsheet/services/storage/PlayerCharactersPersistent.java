@@ -1,18 +1,15 @@
-package beans;
+package charsheet.services.storage;
 
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
-
-import domain.CharacterStorage;
-import domain.PlayerCharacter;
-import domain.PlayerCharacters;
-
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
+import charsheet.entities.PlayerCharacter;
 
 @Alternative
 @PlayerCharacters

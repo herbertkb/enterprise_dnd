@@ -1,4 +1,4 @@
-package view;
+package charsheet.jsf;
 
 
 import javax.ejb.EJB;
@@ -8,13 +8,13 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import beans.Dice;
-import domain.BaseStats;
-import domain.CharacterStorage;
-import domain.EffectThrower;
+import charsheet.entities.BaseStats;
+import charsheet.entities.PlayerCharacter;
+import charsheet.services.Dice;
+import charsheet.services.events.EffectThrower;
+import charsheet.services.storage.CharacterStorage;
+import charsheet.services.storage.PlayerCharacters;
 import domain.HpChanger;
-import domain.PlayerCharacter;
-import domain.PlayerCharacters;
 
 import java.io.Serializable;
 

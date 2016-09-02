@@ -1,4 +1,4 @@
-package beans;
+package charsheet.services.storage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,10 +12,8 @@ import javax.ejb.Singleton;
 import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
 
-import domain.CharacterStorage;
-import domain.LogCharacterChange;
-import domain.PlayerCharacter;
-import domain.PlayerCharacters;;
+import charsheet.entities.PlayerCharacter;
+import charsheet.services.logging.LogCharacterChange;;
 
 @Alternative
 @Default

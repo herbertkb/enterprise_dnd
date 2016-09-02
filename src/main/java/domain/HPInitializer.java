@@ -8,7 +8,8 @@ import javax.ejb.EJB;
 import javax.enterprise.inject.Any;
 import javax.inject.Inject;
 
-import beans.Dice;
+import charsheet.entities.PlayerCharacter;
+import charsheet.services.Dice;
 
 @Decorator
 public class HPInitializer implements HpChanger, Serializable {

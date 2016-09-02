@@ -3,8 +3,11 @@ package domain;
 import java.io.Serializable;
 
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
+import charsheet.entities.PlayerCharacter;
+import charsheet.services.logging.LogCharacterChange;
+import charsheet.services.storage.CharacterStorage;
+import charsheet.services.storage.PlayerCharacters;
 
 public class HpChangerImpl implements HpChanger, Serializable {
 
@@ -13,16 +16,17 @@ public class HpChangerImpl implements HpChanger, Serializable {
 	@Inject
 	@PlayerCharacters
 	CharacterStorage characters;
-	
+
 	@Override
+	@LogCharacterChange
 	public int changeHP(PlayerCharacter pc, int howMuch) {
-		
-		int currentHP = pc.getHp();		
+
+		int currentHP = pc.getHp();
 		int newHP = currentHP + howMuch;
 		pc.setHp(newHP);
 		characters.modifyCharacter(pc);
-		
+
 		return newHP;
 	}
-	
+
 }

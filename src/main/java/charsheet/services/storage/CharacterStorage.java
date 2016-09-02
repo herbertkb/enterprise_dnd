@@ -1,6 +1,8 @@
-package domain;
+package charsheet.services.storage;
 
 import java.util.List;
+
+import charsheet.entities.PlayerCharacter;
 
 public interface CharacterStorage {
 	

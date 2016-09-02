@@ -1,10 +1,10 @@
-package domain;
+package charsheet.services.events;
 
 import javax.ejb.EJB;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
-import beans.Dice;
+import charsheet.services.Dice;
 
 public class EffectThrower {
 	
@@ -19,7 +19,7 @@ public class EffectThrower {
 		
 		int damage = Integer.parseInt(dice.rollDice(casterLevel, 6));
 		
-		System.out.println("CL: " + casterLevel + " DMG: " + damage);
+		System.out.println("Fireball! CL: " + casterLevel + " DMG: " + damage);
 		
 		hpChange.fire( damage * (-1) );
 		

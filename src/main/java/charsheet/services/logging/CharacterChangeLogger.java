@@ -1,8 +1,10 @@
-package domain;
+package charsheet.services.logging;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
+
+import charsheet.entities.PlayerCharacter;
 
 @LogCharacterChange
 @Interceptor

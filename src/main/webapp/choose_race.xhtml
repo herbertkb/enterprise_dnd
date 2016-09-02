@@ -1,42 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition>
-	
-<!-- 
+
+	<!-- 
 ToDo: replace race & class strings with enums:
 http://stackoverflow.com/questions/8229638/how-to-use-enum-values-in-fselectitems
 -->
 
-<!-- 
+	<!-- 
 ToDo: display and redraw base stats based on selection
 -->
-    <h:form>
-	<h:selectOneRadio id="race" value="#{sheet.race}" required="true">
-	   <p>
-	   <f:selectItem
-	       itemValue="human"
-	       itemLabel="Human"/>
-       </p>       
-       <p>
-       <f:selectItem
-           itemValue="dwarf"
-           itemLabel="Dwarf (+2 Con, -2 Dex)" />
-       </p>
-       <p>
-       <f:selectItem
-           itemValue="elf"
-           itemLabel="Elf (+2 Dex, -2 Con)"/>
-       </p>
-	</h:selectOneRadio>
-	
-	<p>  
-	   <h:commandButton action="#{creater.keepRace()}" value="OK" />
-	</p>
-	
+	<h:form>
+		<h:selectOneRadio id="race" value="#{sheet.race}" required="true">
+			<p>
+				<f:selectItem itemValue="human" itemLabel="Human" />
+			</p>
+			<p>
+				<f:selectItem itemValue="dwarf" itemLabel="Dwarf (+2 Con, -2 Dex)" />
+			</p>
+			<p>
+				<f:selectItem itemValue="elf" itemLabel="Elf (+2 Dex, -2 Con)" />
+			</p>
+		</h:selectOneRadio>
+
+		<p>
+			<h:commandButton action="#{creater.keepRace()}" value="OK" />
+		</p>
+
 	</h:form>
 </ui:composition>
 </html>

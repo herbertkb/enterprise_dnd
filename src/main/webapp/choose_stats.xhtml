@@ -1,51 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head></h:head> 
+<h:head></h:head>
 <ui:composition>
-    
-    <!-- Display the rolls -->
-    <p>
-        <h:outputText value="STR:"/>
-        <h:outputText value="#{stats.STR}" />
-    </p>
-    <p>  
-        <h:outputText value="DEX:"/>
-        <h:outputText value="#{stats.DEX}" />
-    </p>
-    <p>  
-        <h:outputText value="CON:"/>
-        <h:outputText value="#{stats.CON}" />
-    </p>
-    <p>  
-        <h:outputText value="WIS:"/>
-        <h:outputText value="#{stats.WIS}" />
-    </p>
-    <p>  
-        <h:outputText value="INT:"/>
-        <h:outputText value="#{stats.INT}" />
-    </p>       
-    <p>  
-        <h:outputText value="CHA:"/>
-        <h:outputText value="#{stats.CHA}" />
-    </p>    
+
+	<!-- Display the rolls -->
+	<p>
+		<h:outputText value="STR:" />
+		<h:outputText value="#{stats.STR}" />
+	</p>
+	<p>
+		<h:outputText value="DEX:" />
+		<h:outputText value="#{stats.DEX}" />
+	</p>
+	<p>
+		<h:outputText value="CON:" />
+		<h:outputText value="#{stats.CON}" />
+	</p>
+	<p>
+		<h:outputText value="WIS:" />
+		<h:outputText value="#{stats.WIS}" />
+	</p>
+	<p>
+		<h:outputText value="INT:" />
+		<h:outputText value="#{stats.INT}" />
+	</p>
+	<p>
+		<h:outputText value="CHA:" />
+		<h:outputText value="#{stats.CHA}" />
+	</p>
 
 
-    <p>
-    <h:form>
-    <!-- Reroll to reload the page with new stats -->
-    <h:commandButton 
-        action="#{creater.rollStats}" 
-        value="Re-Roll Stats" />
-    
-    <!--  Keep stats and move to choosing race -->
-    <h:commandButton action="#{creater.keepStats}" value="Keep Stats" />
-    </h:form>
-    </p>
-    
+	<p>
+		<h:form>
+			<!-- Reroll to reload the page with new stats -->
+			<h:commandButton action="#{creater.rollStats}" value="Re-Roll Stats" />
+
+			<!--  Keep stats and move to choosing race -->
+			<h:commandButton action="#{creater.keepStats}" value="Keep Stats" />
+		</h:form>
+	</p>
+
 
 
 </ui:composition>

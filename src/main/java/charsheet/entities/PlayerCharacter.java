@@ -1,4 +1,4 @@
-package domain;
+package charsheet.entities;
 
 import java.io.Serializable;
 import java.lang.String;

@@ -1,4 +1,4 @@
-package view;
+package charsheet.jsf;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import domain.CharacterStorage;
-import domain.PlayerCharacter;
-import domain.PlayerCharacters;
+import charsheet.entities.PlayerCharacter;
+import charsheet.services.storage.CharacterStorage;
+import charsheet.services.storage.PlayerCharacters;
 
 @ApplicationScoped
 @Named("characterSheets")
