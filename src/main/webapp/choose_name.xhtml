@@ -9,10 +9,13 @@
     <h:form>
     <p>
         <h:outputLabel value="What is your name?" for="name"/>
-        <h:inputText id="name" value="#{sheet.name}" required="true">
+        <h:inputText 
+            id="name" 
+            value="#{sheet.name}" 
+            validatorMessage="Who are you?">
             <f:validateLength minimum="1" maximum="32" for="name"/>
         </h:inputText>
-        <h:message for="name" errorStyle="color:red" />
+        <h:message for="name" errorStyle="color:red"/>
         
     </p>
     

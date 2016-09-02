@@ -11,8 +11,7 @@
                
         <h1>RETURN TO GNOME CAVE</h1>
         
-        <h:outputText value="The Party"/>
-                
+        <h2>The Party</h2>                
         <!-- table of player characters -->
         <p>
         <h:dataTable value="#{characterSheets.playerSheets}" var="pc">
@@ -42,15 +41,17 @@
         </h:dataTable>
         </p>
         
-        <!--  buttons -->
         <p>
             <h:form>
 	        <!-- create new character  -->
 	        <h:commandButton 
 	            action="#{creater.rollStats}"
 	            value="Create Player Character"/>
-	        
-                
+	         </h:form>
+        </p>     
+        
+        <h2>Cast a spell</h2>
+        <h:form> 
             <!--  cast FIREBALL to deal damage to all PCs -->
             <h:outputLabel value="Caster Level" for="fireball" />
             <h:inputText 
@@ -64,10 +65,9 @@
                 action="#{spellCaster.fireball()}" 
                 value="FIREBALL!"/>
             <h:message for="fireball" errorStyle="color:red; display:block" />
+        </h:form> 
                 
-                
-            </h:form>
-        </p>
+
         
         
         

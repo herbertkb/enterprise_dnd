@@ -3,6 +3,8 @@ package domain;
 import java.io.Serializable;
 
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 public class HpChangerImpl implements HpChanger, Serializable {
 

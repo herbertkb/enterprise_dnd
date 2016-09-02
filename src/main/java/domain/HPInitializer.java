@@ -26,7 +26,8 @@ public class HPInitializer implements HpChanger, Serializable {
 	@Override
 	public int changeHP(PlayerCharacter pc, int howMuch) {
 		
-		if (howMuch != 0) return hpChanger.changeHP(pc, howMuch);
+		if (howMuch != 0) 
+			return hpChanger.changeHP(pc, howMuch);
 		
 		int hitDice;
 		switch( pc.getCclass() ) {		//TODO: replace with enum or something

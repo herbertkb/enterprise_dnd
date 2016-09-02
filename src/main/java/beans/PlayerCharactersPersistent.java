@@ -31,7 +31,7 @@ public class PlayerCharactersPersistent implements CharacterStorage {
 
 	@Override
 	public void modifyCharacter(PlayerCharacter pc) {
-		em.persist(pc);
+		em.merge(pc);
 	}
 
 	@Override
