@@ -11,7 +11,7 @@ import charsheet.entities.PlayerCharacter;
 public class CharacterChangeLogger {
 	
 	@AroundInvoke
-	public Object aroundInvoke(InvocationContext ic) throws Exception {
+	public Object logChange(InvocationContext ic) throws Exception {
 		
 		Object[] params = ic.getParameters();
 		Object param = params[0];
@@ -20,11 +20,11 @@ public class CharacterChangeLogger {
 		
 		System.out.println("Character changed from: " + pc);
 		
-		ic.proceed();
+		Object r = ic.proceed();
 		
 		System.out.println("Character changed to: " + pc);
-
-		return null;
+		
+		return r;
 	}
 
 }

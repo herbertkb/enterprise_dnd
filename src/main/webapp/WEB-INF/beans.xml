@@ -18,7 +18,6 @@
 		<class>charsheet.services.storage.PlayerCharactersPersistent</class>
 	</alternatives>
 	<decorators>
-		<class>domain.HPInitializer</class>
 	</decorators>
 	<interceptors>
 		<class>charsheet.services.logging.CharacterChangeLogger</class>

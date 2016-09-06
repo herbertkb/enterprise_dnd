@@ -1,4 +1,4 @@
-package domain;
+package charsheet.services.storage;
 
 import java.io.Serializable;
 
@@ -6,8 +6,6 @@ import javax.inject.Inject;
 
 import charsheet.entities.PlayerCharacter;
 import charsheet.services.logging.LogCharacterChange;
-import charsheet.services.storage.CharacterStorage;
-import charsheet.services.storage.PlayerCharacters;
 
 public class HpChangerImpl implements HpChanger, Serializable {
 

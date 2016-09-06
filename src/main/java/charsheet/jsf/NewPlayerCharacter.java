@@ -13,8 +13,9 @@ import charsheet.entities.PlayerCharacter;
 import charsheet.services.Dice;
 import charsheet.services.events.EffectThrower;
 import charsheet.services.storage.CharacterStorage;
+import charsheet.services.storage.HPInitializer;
+import charsheet.services.storage.HpChanger;
 import charsheet.services.storage.PlayerCharacters;
-import domain.HpChanger;
 
 import java.io.Serializable;
 
@@ -40,7 +41,7 @@ public class NewPlayerCharacter implements Serializable {
 	private CharacterStorage players;
 	
 	@Inject
-	private HpChanger hpInitializer;
+	private HPInitializer hpInitializer;
 	
 	@EJB
 	private Dice dice;
@@ -81,8 +82,9 @@ public class NewPlayerCharacter implements Serializable {
 		pc.setLevel( Integer.parseInt( dice.rollDice(1, 10)) );
 				
 		// initialize HP and add to player storage
+		hpInitializer.initializeHP(pc);
 		players.addCharacter(pc);
-		hpInitializer.changeHP(pc, 0);
+		
 		
 		// Done!
 		conversation.end();

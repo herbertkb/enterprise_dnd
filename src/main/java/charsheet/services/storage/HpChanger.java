@@ -1,4 +1,4 @@
-package domain;
+package charsheet.services.storage;
 
 import charsheet.entities.PlayerCharacter;
 

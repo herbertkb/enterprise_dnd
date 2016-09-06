@@ -8,8 +8,8 @@ import javax.inject.Inject;
 
 import charsheet.entities.PlayerCharacter;
 import charsheet.services.storage.CharacterStorage;
+import charsheet.services.storage.HpChanger;
 import charsheet.services.storage.PlayerCharacters;
-import domain.HpChanger;
 
 public class EffectListener {
 	

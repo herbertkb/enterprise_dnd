@@ -16,7 +16,6 @@ import charsheet.services.storage.PlayerCharacters;
 public class Characters {
 	
 	@Inject
-	//@EJB
 	@PlayerCharacters
 	CharacterStorage characters;
 	

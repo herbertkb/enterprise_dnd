@@ -10,6 +10,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import charsheet.entities.PlayerCharacter;
+import charsheet.services.logging.LogCharacterChange;
 
 @Alternative
 @PlayerCharacters
@@ -22,6 +23,7 @@ public class PlayerCharactersPersistent implements CharacterStorage {
 
 
 	@Override
+	@LogCharacterChange
 	public void addCharacter(PlayerCharacter pc) {
 		em.persist(pc);
 	}
