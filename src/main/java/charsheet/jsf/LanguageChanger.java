@@ -22,7 +22,8 @@ public class LanguageChanger {
 
 		this.locale = new Locale(code);
 				
-		System.out.println("Locale is now: " + locale);
+		System.out.println("Locale should be: " + locale);
+		System.out.println("Locale is really: " + FacesContext.getCurrentInstance().getViewRoot().getLocale());
 	}
 	
     public String getLanguage() {

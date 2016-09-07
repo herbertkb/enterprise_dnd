@@ -68,7 +68,8 @@
         <h:form>
 	        <h:selectOneMenu 
 	                value="#{languageChanger.language}"
-	                onchange="submit()">
+	                onchange="submit()"
+	                valueChangeListener="#{languageChanger.languageChanged}">
 	            <f:selectItem itemValue="en" itemLabel="Common"/>
 	            <f:selectItem itemValue="fr" itemLabel="ཊིབེཏན"/>
 	        </h:selectOneMenu>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition>
+		<form method="post" action="j_security_check">
+		  <h:outputLabel value="Name:" for="j_username" />
+		  <h:inputText id="j_username" />
+		  <h:outputLabel value="Pass:" for="j_password" />
+		  <h:inputSecret id="j_password" />
+		  <h:commandButton id="login" />
+		  <h:messages/>
+		</form>
+	</ui:composition>
+
+</html>
