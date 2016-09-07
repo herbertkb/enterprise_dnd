@@ -78,6 +78,8 @@ public class NewPlayerCharacter implements Serializable {
 	
 	public String keepName() {
 		
+		// TODO: allow player to set level, apply JSF conversion/validation
+		
 		// Set player to random level
 		pc.setLevel( Integer.parseInt( dice.rollDice(1, 10)) );
 				

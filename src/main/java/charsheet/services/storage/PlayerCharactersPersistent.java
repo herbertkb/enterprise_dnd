@@ -23,7 +23,7 @@ public class PlayerCharactersPersistent implements CharacterStorage {
 
 
 	@Override
-	@LogCharacterChange
+	@LogCharacterChange	// TODO: remove, create @LogCharacterCreation, tag elsewhere
 	public void addCharacter(PlayerCharacter pc) {
 		em.persist(pc);
 	}
