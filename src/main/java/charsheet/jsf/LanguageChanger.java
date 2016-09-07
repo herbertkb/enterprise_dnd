@@ -5,6 +5,7 @@ import java.util.Locale;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ValueChangeEvent;
 
 @ManagedBean
 @SessionScoped
@@ -23,4 +24,17 @@ public class LanguageChanger {
 				
 		System.out.println("Locale is now: " + locale);
 	}
+	
+    public String getLanguage() {
+        return locale.getLanguage();
+    }
+
+    public void setLanguage(String language) {
+        setLocale(language);
+    }
+    
+    public void languageChanged(ValueChangeEvent e){
+    	setLocale(e.getNewValue().toString());
+    	FacesContext.getCurrentInstance().getViewRoot().setLocale(locale);
+    }
 }
