@@ -20,5 +20,18 @@
 
 	<!-- Write your navigation rules here. You are encouraged to use CDI for 
 		creating @Named managed beans. -->
+		
+	<application>
+		<locale-config>
+			<default-locale>en_US</default-locale>
+			<supported-locale>fr_FR</supported-locale>
+		</locale-config>
+		
+		<resource-bundle>
+		  <base-name>charsheet.Messages</base-name>
+		  <var>msg</var>
+		</resource-bundle>
+		
+	</application>
 
 </faces-config>

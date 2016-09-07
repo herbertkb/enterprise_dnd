@@ -3,7 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-
+<f:view locale="#{languageChanger.locale}">
 <h:head></h:head>
 <h:body>
 
@@ -62,11 +62,20 @@
 			<h:message for="fireball" errorStyle="color:red; display:block" />
 		</h:form>
 
-
-
+        <!-- Language conversion -->
+        <h2><h:outputLabel value="#{msg['index.changeLang']}"/></h2>
+        <h:form>
+            <h:commandButton 
+                action="#{languageChanger.changeLanguage('fr')}" 
+                value="ཆངེ་ལངུཨགེ" />
+            <h:commandButton 
+                action="#{languageChanger.changeLanguage('en')}" 
+                value="Common" />
+        </h:form>
 
 
 	</ui:composition>
 
 </h:body>
+</f:view>
 </html>
