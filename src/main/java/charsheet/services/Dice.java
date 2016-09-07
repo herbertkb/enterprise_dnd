@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.Produces;
 
 @Path("/dice")
@@ -25,5 +26,16 @@ public class Dice {
 		}
 		
 		return new Integer(score).toString();
-	}	
+	}
+	
+	
+	@GET
+	@Path("roll")
+	@Produces("text/plain")
+	public String queryDice(
+				@QueryParam("dice")int dice,
+				@QueryParam("sides")int sides) {
+		
+		return rollDice(dice, sides);
+	}
 }

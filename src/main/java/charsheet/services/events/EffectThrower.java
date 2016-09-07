@@ -1,11 +1,15 @@
 package charsheet.services.events;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import javax.ws.rs.Path;
 
 import charsheet.services.Dice;
 
+@Stateless
+@Path("effects")
 public class EffectThrower {
 	
 	@EJB
@@ -24,6 +28,9 @@ public class EffectThrower {
 		hpChange.fire( damage * (-1) );
 		
 	}
+	
+	
+	//public void massHeal
 	
 	
 
