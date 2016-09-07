@@ -19,6 +19,7 @@
 				<h:column>
 					<f:facet name="header">Name</f:facet>
                 #{pc.name}
+                
             </h:column>
 
 				<h:column>
@@ -63,14 +64,14 @@
 		</h:form>
 
         <!-- Language conversion -->
-        <h2><h:outputLabel value="#{msg['index.changeLang']}"/></h2>
+        <h2><h:outputText value="#{msg['index.changeLang']}"/></h2>
         <h:form>
-            <h:commandButton 
-                action="#{languageChanger.changeLanguage('fr')}" 
-                value="ཆངེ་ལངུཨགེ" />
-            <h:commandButton 
-                action="#{languageChanger.changeLanguage('en')}" 
-                value="Common" />
+	        <h:selectOneMenu 
+	                value="#{languageChanger.locale}"
+	                onchange="submit()">
+	            <f:selectItem itemValue="en" itemLabel="Common"/>
+	            <f:selectItem itemValue="fr" itemLabel="ཊིབེཏན"/>
+	        </h:selectOneMenu>
         </h:form>
 
 

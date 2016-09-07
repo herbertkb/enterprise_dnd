@@ -10,24 +10,17 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class LanguageChanger {
 	
-	private Locale locale;
+	private Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
 	
 	public Locale getLocale() {
 		return locale;
 	}
 
-	public String changeLanguage(String code){
-		System.out.println("Language is now:" 
-				+ FacesContext.getCurrentInstance().getViewRoot().getLocale() );
-		System.out.println("Changing lang to " + code + "...");
-		
-		locale = new Locale(code);
-		FacesContext.getCurrentInstance().getViewRoot()
-			.setLocale( locale );
-		
-		System.out.println("Language is now:" 
-				+ FacesContext.getCurrentInstance().getViewRoot().getLocale() );
-		
-		return null;
+	public void setLocale(String code){
+		System.out.println("Locale was: " + locale);
+
+		this.locale = new Locale(code);
+				
+		System.out.println("Locale is now: " + locale);
 	}
 }
