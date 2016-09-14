@@ -24,7 +24,7 @@ public class UserManager {
 	public void addUser(User u){
 		em.persist(u);
 		
-		// TODO: fix UserPersistenceLogger interceptor and remove below
+		// TODO: fix UserPersistenceLogger intercepter and remove below
 		System.out.println("Adding: " + u);			 
 	}
 	
@@ -37,7 +37,7 @@ public class UserManager {
 	public void deleteUser(User u){
 		em.remove(u);
 		
-		// TODO: fix UserPersistenceLogger interceptor and remove below
+		// TODO: fix UserPersistenceLogger intercepter and remove below
 		System.out.println("Deleting: " + u);
 	}
 	
