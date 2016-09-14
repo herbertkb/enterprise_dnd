@@ -11,15 +11,14 @@
 	language governing permissions and limitations under the License. This file 
 	can be an empty text file (0 bytes) We're declaring the schema to save you 
 	time if you do have to configure this in the future -->
-<beans xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee          http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
-	<alternatives>
-		<!-- <class>beans.PlayerCharactersInMemory</class> -->
-		<class>charsheet.services.storage.PlayerCharactersPersistent</class>
-	</alternatives>
-	<decorators>
-	</decorators>
-	<interceptors>
-		<class>charsheet.services.logging.CharacterChangeLogger</class>
-	</interceptors>
+<beans xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee          http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+ <alternatives>
+  <!-- <class>beans.PlayerCharactersInMemory</class> -->
+  <class>charsheet.services.storage.PlayerCharactersPersistent</class>
+ </alternatives>
+ <interceptors>
+  <class>charsheet.services.logging.CharacterChangeLogger</class>
+  <class>charsheet.services.logging.UserPersistenceLogger</class>
+ </interceptors>
 </beans>

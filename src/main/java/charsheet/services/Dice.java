@@ -3,11 +3,13 @@ package charsheet.services;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.ejb.Stateless;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 @Path("/dice")
 @Stateless
@@ -31,11 +33,15 @@ public class Dice {
 	
 	@GET
 	@Path("roll")
-	@Produces("text/plain")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
 	public String queryDice(
 				@QueryParam("dice")int dice,
 				@QueryParam("sides")int sides) {
 		
 		return rollDice(dice, sides);
 	}
+	
+	
+	
 }

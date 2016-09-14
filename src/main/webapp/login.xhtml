@@ -3,20 +3,18 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
-
-	<!-- 
-		Replace path to template, title, header and body
-		with actual data.
-	 -->
-	<ui:composition>
+<h:head><title>Login</title></h:head>
+<h:body>
 		<form method="post" action="j_security_check">
-		  <h:outputLabel value="Name:" for="j_username" />
-		  <h:inputText id="j_username" />
-		  <h:outputLabel value="Pass:" for="j_password" />
-		  <h:inputSecret id="j_password" />
-		  <h:commandButton id="login" />
-		  <h:messages/>
+			<h:panelGrid columns="2">
+				  <h:outputLabel value="Name:" for="j_username" />
+				  <h:inputText id="j_username" />
+				  <h:outputLabel value="Pass:" for="j_password" />
+				  <h:inputSecret id="j_password" />
+				  <h:commandButton id="login" value="Login"/>
+			  </h:panelGrid>
+			  <h:messages/>
 		</form>
-	</ui:composition>
+</h:body>
 
 </html>
