@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
-import javax.persistence.*;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -17,8 +20,10 @@ import charsheet.services.logging.LogCharacterChange;
 @Stateless
 public class PlayerCharactersPersistent implements CharacterStorage {
 	
-	@PersistenceContext
-	private EntityManager em;
+//	@PersistenceContext
+//	private EntityManager em;
+	
+	@Inject @Charsheet private EntityManager em;
 
 
 

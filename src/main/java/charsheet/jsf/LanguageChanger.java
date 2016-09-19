@@ -2,6 +2,7 @@ package charsheet.jsf;
 
 import java.util.Locale;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -11,7 +12,11 @@ import javax.faces.event.ValueChangeEvent;
 @SessionScoped
 public class LanguageChanger {
 	
-	private Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
+	private Locale locale; 
+	@PostConstruct
+	public void init() {
+		locale = FacesContext.getCurrentInstance().getApplication().getDefaultLocale();
+	}
 	
 	public Locale getLocale() {
 		return locale;

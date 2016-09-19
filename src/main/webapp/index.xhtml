@@ -62,6 +62,17 @@
 			<h:commandButton action="#{spellCaster.fireball()}" value="FIREBALL!" />
 			<h:message for="fireball" errorStyle="color:red; display:block" />
 		</h:form>
+		
+		<h2>Level up!</h2>
+        <h:form>
+            <h:outputLabel value="Who?" for="levelup" />
+            <h:inputText id="levelup" value="#{levelUpper.characterName}">
+            </h:inputText>
+
+            <h:commandButton action="#{levelUpper.levelUp()}" value="LevelUp!" />
+            <h:message for="levelup" errorStyle="color:red; display:block" />
+        </h:form>
+		
 
         <!-- Language conversion -->
         <h2><h:outputText value="#{msg['index.changeLang']}"/></h2>

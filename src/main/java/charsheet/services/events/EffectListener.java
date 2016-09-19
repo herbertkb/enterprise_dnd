@@ -29,5 +29,13 @@ public class EffectListener {
 		}
 		
 	}
-
+	
+	@Inject LevelUp lu;
+	public void levelUpListener(@Observes @Any LevelUpEvent lue){
+		String name = lu.getForWhom();
+		PlayerCharacter pc = sheets.getCharacter(name);
+		int currentLevel = pc.getLevel();
+		pc.setLevel(currentLevel + 1); 
+		sheets.modifyCharacter(pc);
+	}
 }
