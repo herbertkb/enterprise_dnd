@@ -1,5 +1,6 @@
 package charsheet.jsf;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
@@ -21,9 +22,13 @@ public class LevelUpper {
 		lu.setForWhom(characterName);
 		event.fire(new LevelUpEvent());
 		
-		return null;
+		return "index";
 	}
 	
+	@PostConstruct
+	public void init() {
+		characterName = "";
+	}
 	
 	public String getCharacterName() {
 		return characterName;

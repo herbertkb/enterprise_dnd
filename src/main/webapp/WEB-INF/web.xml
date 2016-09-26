@@ -9,7 +9,7 @@
 	</welcome-file-list>
 	
 	 
-
+<!--  
 	
 	<security-constraint>
 	   <web-resource-collection>
@@ -32,6 +32,6 @@
             <form-error-page>/error.xhtml</form-error-page>
         </form-login-config>
     </login-config>
-    
+ -->   
     
 </web-app>

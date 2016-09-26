@@ -10,6 +10,11 @@
 	<ui:composition>
 
 		<h1>RETURN TO GNOME CAVE</h1>
+		
+		<h3>Dungeon Level <h:outputText value="#{dungeon.level}"/> </h3>
+		<f:metadata>
+		  <f:viewParam name="level" value="#{dungeon.level}"></f:viewParam>
+		</f:metadata>
 
 		<h2>The Party</h2>
 		<!-- table of player characters -->

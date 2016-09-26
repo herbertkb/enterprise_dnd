@@ -18,6 +18,7 @@
 		<jta-data-source>java:jboss/datasources/charsheetDS</jta-data-source>
 		<class>charsheet.entities.PlayerCharacter</class>
 		<class>charsheet.entities.BaseStats</class>
+		<class>charsheet.entities.User</class>
 		<properties>
 			<!-- Properties for Hibernate -->
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
