@@ -9,6 +9,9 @@ import org.hibernate.validator.constraints.NotEmpty;
  * Entity implementation class for Entity: Character
  *
  */
+
+//TODO: Entity inheritance with abstract Character, concrete NonPlayercharacter
+
 @Entity
 public class PlayerCharacter implements Serializable {
 	

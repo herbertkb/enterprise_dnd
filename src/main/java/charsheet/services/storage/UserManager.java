@@ -61,6 +61,20 @@ public class UserManager {
 				.getResultList();
 	}
 	
+	public boolean validateUsernamePassword (String username, String password){
+		
+		User u = getUser(username);
+		
+		if (u == null) 
+			return false;
+		
+		if (u.getPassword().equals(password)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	@PostConstruct
 	private void initialUsers() {
 		

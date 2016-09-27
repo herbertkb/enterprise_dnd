@@ -1,15 +1,20 @@
 package charsheet.entities;
 
 import java.io.Serializable;
-import java.lang.String;
-import javax.persistence.*;
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: User
  *
  */
-@Entity
 
+// TODO: refactor as "Player" instead of as "User"
+
+@Entity
 public class User implements Serializable {
 
 	
@@ -17,6 +22,12 @@ public class User implements Serializable {
 	private String role;
 	private String password;
 	private boolean remembered;
+	private boolean loggedIn;
+	
+	
+	// TODO: Helper methods / JPQL queries for retrieving characters beloning to player
+	@OneToMany
+	private Set<PlayerCharacter> characters;
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -54,7 +65,11 @@ public class User implements Serializable {
 	public String toString() {
 		return "User [username=" + username + ", role=" + role + "]";
 	}
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
 	
-	
-   
 }

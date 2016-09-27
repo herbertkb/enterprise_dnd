@@ -5,6 +5,8 @@
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head><title>Login</title></h:head>
 <h:body>
+
+<!-- 
 		<form method="post" action="j_security_check">
 			<h:panelGrid columns="2">
 				  <h:outputLabel value="Name:" for="j_username" />
@@ -15,6 +17,25 @@
 			  </h:panelGrid>
 			  <h:messages/>
 		</form>
+-->
+
+    <h:form id="loginForm">
+        <h:panelGrid columns="2">
+             <h:outputLabel value="Name:" for="username" />
+             <h:inputText 
+                id="username" value="#{credentials.username}" required="true"/>
+             
+             
+             <h:outputLabel value="Pass:" for="password" required="true"/>
+             <h:inputSecret 
+                id="password" value="#{credentials.password}" />
+             
+             <h:commandButton 
+               id="login" value="Login" action="#{login.login()}"/>
+         </h:panelGrid>
+         <h:messages/>
+    </h:form>
+
 </h:body>
 
 </html>
