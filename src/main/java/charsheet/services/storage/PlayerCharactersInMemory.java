@@ -56,4 +56,12 @@ public class PlayerCharactersInMemory implements CharacterStorage {
 	public List<PlayerCharacter> getAll() {
 		return new ArrayList<PlayerCharacter>( playerCharacters.values() );
 	}
+
+	@Override
+	public boolean exists(String name) {
+		
+		return playerCharacters.containsKey(name);
+	}
+	
+	
 }

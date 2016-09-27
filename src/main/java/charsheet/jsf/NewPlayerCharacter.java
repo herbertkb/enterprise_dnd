@@ -14,7 +14,7 @@ import charsheet.services.Dice;
 import charsheet.services.events.EffectThrower;
 import charsheet.services.storage.CharacterStorage;
 import charsheet.services.storage.HPInitializer;
-import charsheet.services.storage.HpChanger;
+import charsheet.services.storage.CharacterChanger;
 import charsheet.services.storage.PlayerCharacters;
 
 import java.io.Serializable;

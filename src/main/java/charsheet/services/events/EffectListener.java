@@ -7,8 +7,9 @@ import javax.enterprise.inject.Any;
 import javax.inject.Inject;
 
 import charsheet.entities.PlayerCharacter;
+import charsheet.services.logging.LogCharacterChange;
 import charsheet.services.storage.CharacterStorage;
-import charsheet.services.storage.HpChanger;
+import charsheet.services.storage.CharacterChanger;
 import charsheet.services.storage.PlayerCharacters;
 
 public class EffectListener {
@@ -17,7 +18,7 @@ public class EffectListener {
 	@PlayerCharacters
 	CharacterStorage sheets;
 	
-	@Inject HpChanger changer;
+	@Inject CharacterChanger changer;
 	
 	
 	public void fireballListener(@Observes @Any Integer damage){
@@ -34,8 +35,10 @@ public class EffectListener {
 	public void levelUpListener(@Observes @Any LevelUpEvent lue){
 		String name = lu.getForWhom();
 		PlayerCharacter pc = sheets.getCharacter(name);
-		int currentLevel = pc.getLevel();
-		pc.setLevel(currentLevel + 1); 
-		sheets.modifyCharacter(pc);
+		changer.incrementPlayerLevel(pc);
 	}
+	
+	
+
+	
 }

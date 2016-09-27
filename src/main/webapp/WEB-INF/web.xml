@@ -8,9 +8,7 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
-	 
-<!--  
-	
+	 	
 	<security-constraint>
 	   <web-resource-collection>
 	       <web-resource-name>DungeonMaster Stuff</web-resource-name>
@@ -32,6 +30,5 @@
             <form-error-page>/error.xhtml</form-error-page>
         </form-login-config>
     </login-config>
- -->   
     
 </web-app>

@@ -12,6 +12,8 @@ public interface CharacterStorage {
 	
 	public PlayerCharacter getCharacter(String name);
 	
+	public boolean exists(String name);
+	
 	public void deleteCharacter(String name);
 	
 	public List<PlayerCharacter> getAll();

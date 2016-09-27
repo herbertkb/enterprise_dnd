@@ -71,7 +71,8 @@
 		<h2>Level up!</h2>
         <h:form>
             <h:outputLabel value="Who?" for="levelup" />
-            <h:inputText id="levelup" value="#{levelUpper.characterName}">
+            <h:inputText id="levelup" value="#{levelUpper.characterName}" required="true">
+                <f:validator binding="#{PCNameValidator}"/>
             </h:inputText>
 
             <h:commandButton action="#{levelUpper.levelUp()}" value="LevelUp!" />

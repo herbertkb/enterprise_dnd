@@ -20,12 +20,7 @@ import charsheet.services.logging.LogCharacterChange;
 @Stateless
 public class PlayerCharactersPersistent implements CharacterStorage {
 	
-//	@PersistenceContext
-//	private EntityManager em;
-	
 	@Inject @Charsheet private EntityManager em;
-
-
 
 	@Override
 	@LogCharacterChange	// TODO: remove, create @LogCharacterCreation, tag elsewhere
@@ -75,6 +70,15 @@ public class PlayerCharactersPersistent implements CharacterStorage {
 		return em.createQuery(
 				criteria.select(criteria.from(PlayerCharacter.class)))
 				.getResultList();
+	}
+
+	@Override
+	public boolean exists(String name) {
+		
+		if (getCharacter(name) == null) 
+			return false;
+		
+		return true;
 	}
 
 }

@@ -7,7 +7,8 @@ import javax.inject.Inject;
 import charsheet.entities.PlayerCharacter;
 import charsheet.services.logging.LogCharacterChange;
 
-public class HpChangerImpl implements HpChanger, Serializable {
+@LogCharacterChange
+public class CharacterChangerImpl implements CharacterChanger, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,7 +17,6 @@ public class HpChangerImpl implements HpChanger, Serializable {
 	CharacterStorage characters;
 
 	@Override
-	@LogCharacterChange
 	public int changeHP(PlayerCharacter pc, int howMuch) {
 
 		int currentHP = pc.getHp();
@@ -25,6 +25,15 @@ public class HpChangerImpl implements HpChanger, Serializable {
 		characters.modifyCharacter(pc);
 
 		return newHP;
+	}
+	
+	
+	public int incrementPlayerLevel(PlayerCharacter pc) {
+		int currentLevel = pc.getLevel();
+		pc.setLevel(currentLevel + 1);
+		characters.modifyCharacter(pc);
+		
+		return pc.getLevel();
 	}
 
 }
