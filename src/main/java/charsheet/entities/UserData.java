@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * Entity implementation class for Entity: User
@@ -15,7 +16,8 @@ import javax.persistence.OneToMany;
 // TODO: refactor as "Player" instead of as "User"
 
 @Entity
-public class User implements Serializable {
+@Table(name = "USER")
+public class UserData implements Serializable {
 
 	
 	@Id private String username;
@@ -32,7 +34,7 @@ public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	public User() {
+	public UserData() {
 		super();
 	}   
 	public String getUsername() {

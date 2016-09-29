@@ -1,8 +1,9 @@
 package charsheet.jsf;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-import java.io.Serializable;
 
 @Named
 @SessionScoped
@@ -26,6 +27,12 @@ public class Credentials implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	@Override
+	public String toString() {
+		return "Credentials [username=" + username + ", password=" + password + "]";
+	}
+	
 	
 	
 

@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
-import charsheet.entities.User;
+import charsheet.entities.UserData;
 import charsheet.services.logging.LogUserPersistence;
 
 @Singleton
@@ -21,20 +21,20 @@ public class UserManager {
 	EntityManager em;
 	
 	@LogUserPersistence
-	public void addUser(User u){
+	public void addUser(UserData u){
 		em.persist(u);
 		
 		// TODO: fix UserPersistenceLogger intercepter and remove below
-		System.out.println("Adding: " + u);			 
+		System.out.println("Adding: " + u);	
 	}
 	
 	@LogUserPersistence
-	public void modifyUser(User u){
+	public void modifyUser(UserData u){
 		em.merge(u);
 	}
 	
 	@LogUserPersistence
-	public void deleteUser(User u){
+	public void deleteUser(UserData u){
 		em.remove(u);
 		
 		// TODO: fix UserPersistenceLogger intercepter and remove below
@@ -42,50 +42,45 @@ public class UserManager {
 	}
 	
 	public void deleteUser(String name) {
-		User u = getUser(name);
+		UserData u = getUser(name);
 		deleteUser(u);
 	}
 	
-	public User getUser(String name){
+	public UserData getUser(String name){
 		
-		return em.find(User.class, name);
+		return em.find(UserData.class, name);
 	}
 	
-	public List<User> getAllUsers(){
+	public List<UserData> getAllUsers(){
 		
-		CriteriaQuery<User> criteria = em.getCriteriaBuilder()
-				.createQuery(User.class);
+		CriteriaQuery<UserData> criteria = em.getCriteriaBuilder()
+				.createQuery(UserData.class);
 		
 		return em.createQuery(
-				criteria.select(criteria.from(User.class)))
+				criteria.select(criteria.from(UserData.class)))
 				.getResultList();
 	}
 	
-	public boolean validateUsernamePassword (String username, String password){
-		
-		User u = getUser(username);
-		
-		if (u == null) 
-			return false;
-		
+	public UserData validateUsernamePassword (String username, String password){
+		UserData u = getUser(username);
 		if (u.getPassword().equals(password)) {
-			return true;
+			return u;
 		}
 		
-		return false;
+		return null;
 	}
 	
 	@PostConstruct
 	private void initialUsers() {
 		
-		User player1 = new User();
+		UserData player1 = new UserData();
 		player1.setUsername("Timmy");
-		player1.setPassword("ShivanDragon");
+		player1.setPassword("pass");
 		player1.setRole("player");
 		
-		User dm = new User();
+		UserData dm = new UserData();
 		dm.setUsername("ComicBookGuy");
-		dm.setPassword("WorstEver");
+		dm.setPassword("pass");
 		dm.setRole("dungeonmaster");
 		
 		addUser(player1);
@@ -94,9 +89,9 @@ public class UserManager {
 	
 	@PreDestroy
 	private void teardownUsers(){
-		List<User> users = getAllUsers();
+		List<UserData> users = getAllUsers();
 		
-		for(User u : users){
+		for(UserData u : users){
 			deleteUser(u);
 		}
 	}
